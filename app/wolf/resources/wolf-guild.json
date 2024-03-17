@@ -1,0 +1,15 @@
+{
+  "defaultSystemUserId": "wolf-admin",
+  "members": [
+    {
+      "id": "wolf",
+      "login": "",
+      "rank": "user"
+    }
+  ],
+  "ranks": {
+    "user": ["*"],
+    "guest": ["*"],
+    "system": ["*"]
+  }
+}

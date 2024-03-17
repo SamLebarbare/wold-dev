@@ -1,0 +1,43 @@
+{
+  "name": "wolf-server",
+  "description": "Wolf Server",
+  "appCompany": "loup",
+  "appId": "wolf-server",
+  "debify": {
+    "dependencies": "iproute2"
+  },
+  "xcraft":{
+    "xcraft-core-host": {
+      "mainQuest": "wolf.boot",
+      "secondaryQuest": "wolf.start",
+      "afterLoadQuests": []
+    },
+    "xcraft-core-server": {
+      "modules": ["goblin-wolf-server"]
+    },
+    "xcraft-core-bus": {
+      "host": "0.0.0.0",
+      "commanderPort": 10420,
+      "notifierPort": 20420,
+      "timeout": 3600000,
+      "acceptIncoming": false
+    },
+    "xcraft-core-goblin": {
+      "enableCryo": true,
+      "actionsSync": {
+        "enable": false,
+        "excludeDB": []
+      }
+    },
+    "xcraft-core-cryo": {
+      "enableFTS": true
+    },
+    "goblin-wolf-server": {
+      "nautilus": {
+        "rdb": {
+          "port": 28030
+        }
+      }
+    }
+  }
+}

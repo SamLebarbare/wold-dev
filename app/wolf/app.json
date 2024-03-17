@@ -1,0 +1,89 @@
+{
+  "name": "wolf",
+  "productName": "Wolf",
+  "description": "Wolf Studio Demo",
+  "appCompany": "loup",
+  "appId": "wolf",
+  "build": {
+    "win32": {"targets": ["msi"]},
+    "linux": {"targets": ["AppImage"]},
+    "darwin": {"targets": ["dmg"]}
+  },
+  "xcraft": {
+    "xcraft-core-host": {
+      "mainQuest": "wolfCli.boot",
+      "secondaryQuest": "client.start",
+      "singleInstance": true,
+      "newInstanceQuest": "wolfCli.newInstance",
+      "openFileQuest": "wolfCli.openFile",
+      "openUrlQuest": "wolfCli.openUrl",
+      "powerMonitorSweeper": true
+    },
+    "xcraft-core-server": {
+      "modules": ["goblin-wolf", "goblin-laboratory"],
+      "userModulesBlacklist":["goblin-desktop"]
+    },
+    "xcraft-core-horde": {
+      "hordes": ["wolf-server"],
+      "topology": {
+        "wolf-server": {
+          "host": "127.0.0.1",
+          "commanderPort": 10420,
+          "notifierPort": 20420,
+          "timeout": 3600000,
+          "passive": true
+        }
+      },
+      "connection": {
+        "useOverlay": false
+      }
+    },
+    "xcraft-core-bus": {
+      "policiesPath": "wolf-guild.json"
+    },
+    "xcraft-core-log": {
+      "journalize": true
+    },
+    "xcraft-core-goblin": {
+      "enableCryo": true,
+      "actionsSync": {
+        "enable": true,
+        "excludeDB": ["chat", "ticker", "counters"]
+      }
+    },
+    "xcraft-core-cryo": {
+      "journal": "DELETE",
+      "enableFTS": true
+    },
+    "goblin-client": {
+      "appUserModelId": "Loup.Wolf",
+      "mainGoblin": "wolfCli",
+      "mainGoblinModule": "goblin-wolf",
+      "themeContexts": ["wolf", "theme"],
+      "useConfigurator": false,
+      "useLogin": false
+    },
+    "goblin-wm": {
+      "splashDelay": 1000,
+      "splashWindowOptions": {
+        "width": 640,
+        "height": 440,
+        "transparent": true
+      },
+      "windowOptions": {
+        "minWidth": 1200,
+        "minHeight": 800,
+        "title": "Wolf",
+        "openLink": "external"
+      }
+    },
+    "goblin-nabu": {
+      "storageAvailable": false
+    },
+    "goblin-chest": {
+      "fs": {
+        "maxSize": 2e9
+      }
+    }
+  }
+}

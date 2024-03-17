@@ -1,0 +1,25 @@
+{
+  "name": "goblin-wolf-server",
+  "version": "0.0.1",
+  "description": "goblin-wolf-server",
+  "author": "",
+  "license": "MIT",
+  "config": {
+    "xcraft": {
+      "commands": true
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "goblin-warehouse": "^4.0.3",
+    "xcraft-core-cryo": "^2.4.0",
+    "xcraft-core-goblin": "^5.8.0"
+  },
+  "devDependencies": {
+    "xcraft-dev-prettier": "^2.0.0",
+    "xcraft-dev-rules": "^4.2.4"
+  },
+  "prettier": "xcraft-dev-prettier"
+}

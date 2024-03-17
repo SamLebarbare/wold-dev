@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      h1 {
+        color: white;
+        margin-top: 0px;
+        font-size: 84px;
+        text-shadow: 1px 2px 5px rgba(100, 84, 95, 1),
+          1px 2px 5px rgba(100, 84, 95, 1);
+        font-weight: normal;
+        font-family: Lato, 'Open Sans', Helvetica, Arial, sans-serif;
+      }
+
+      #version {
+        color: black;
+        position: absolute;
+        bottom: 20px;
+        text-shadow: 1px 2px 5px rgba(100, 84, 95, 0.5),
+          1px 2px 5px rgba(100, 84, 95, 0.5);
+        font-weight: normal;
+        font-family: Lato, 'Open Sans', Helvetica, Arial, sans-serif;
+      }
+
+      #background {
+        margin: 0;
+        padding: 12px 24px;
+        display: table;
+        position: relative;
+        top: 20px;
+        left: 20px;
+        border-radius: 10px;
+        box-sizing: border-box;
+        overflow: hidden;
+        width: 600px;
+        height: 400px;
+        background-image: url(wolf.png);
+        background-position: center;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+      }
+
+    
+
+      body {
+        margin: 0;
+        padding: 0;
+        font: message-box;
+        pointer-events: none;
+        box-sizing: border-box;
+        overflow: hidden;
+        width: 640px;
+        height: 440px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="background">
+      <h1>Wolf Studio</h1>
+      <span id="version"></span>
+    </div>
+    <script>
+      require('electron').ipcRenderer.on('program', (event, data) => {
+        const {version} = data;
+        const versionElem = document.getElementById('version');
+        versionElem.innerHTML = `Version ${version}`;
+      });
+    </script>
+  </body>
+</html>

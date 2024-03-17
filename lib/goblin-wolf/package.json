@@ -1,0 +1,30 @@
+{
+  "name": "goblin-wolf",
+  "version": "0.0.1",
+  "description": "Wolf Client",
+  "author": "",
+  "license": "MIT",
+  "config": {
+    "xcraft": {
+      "commands": true
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "goblin-client": "^4.1.0",
+    "goblin-desktop": "^4.0.8",
+    "goblin-warehouse": "^4.0.3",
+    "xcraft-core-book": "^1.1.1",
+    "xcraft-core-cryo": "^2.4.0",
+    "xcraft-core-goblin": "^5.8.0",
+    "xcraft-core-shredder": "^5.3.1"
+  },
+  "devDependencies": {
+    "goblin-theme": "^2.0.9",
+    "xcraft-dev-prettier": "^2.0.0",
+    "xcraft-dev-rules": "^4.2.4"
+  },
+  "prettier": "xcraft-dev-prettier"
+}
