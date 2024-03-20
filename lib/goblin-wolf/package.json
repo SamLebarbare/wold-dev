@@ -16,6 +16,7 @@
     "goblin-client": "^4.1.0",
     "goblin-desktop": "^4.0.8",
     "goblin-warehouse": "^4.0.3",
+    "@fal-ai/serverless-client":"^0.9.0",
     "xcraft-core-book": "^1.1.1",
     "xcraft-core-cryo": "^2.4.0",
     "xcraft-core-goblin": "^5.8.0",
